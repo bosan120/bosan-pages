@@ -1,0 +1,336 @@
+body {
+  animation: fadeIn 0.5ms ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+.bgImage-about{
+    background: url("images/cal10pc1") no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+    width:1920px;
+    height: 1080px;
+}
+
+/*:beforeにぼかし効果を設定する*/
+.bgImage-about:before{
+    content: '';
+    background: inherit;/*.bgImageで設定した背景画像を継承する*/
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;/*重なり順序を一番下にしておく*/
+}
+
+.bgImage-game{
+    background: url("images/sofi.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+    width:auto;
+    height: auto;
+}
+
+.nav-link {
+    font-size:25px;
+    font-family:すずむし;
+}
+
+/*:beforeにぼかし効果を設定する*/
+.bgImage-game:before{
+    content: '';
+    background: inherit;/*.bgImageで設定した背景画像を継承する*/
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;/*重なり順序を一番下にしておく*/
+}
+
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.top-picture .pc { display: block !important;}
+.top-picture .sp { display: none !important; }
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+    .top-picture .pc{ display: none !important; }
+    .top-picture .sp{ display: block !important; }
+}
+
+
+.top-picture div:nth-child(1){ animation: show_image 2.0s ease 4.0s forwards; }
+.top-picture div:nth-child(2){ animation: show_image 2.0s ease 4.0s forwards; }
+
+.games img {
+    　-webkit-transition: 3s;
+    　transition: 3s;
+}
+.games img:hover {
+    　-webkit-transform: rotate(1deg) scale(1.2);
+    　transform: rotate(1deg) scale(1.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#stage {
+    position: relative;
+    width: 100%; height: 100vh;
+}
+
+/*** 共通 ***/
+.motion-type-1,
+.motion-type-1 div,
+.motion-type-2,
+.motion-type-2 div,
+.motion-type-3,
+.motion-type-3 div {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+.top-picture,
+.top-picture div{
+}
+
+/*** motion-type-1 ***/
+.motion-type-1 div { transform: scale(0); }
+.motion-type-1 div:nth-child(1) { background-color: #E7BABB; }
+.motion-type-1 div:nth-child(2) { background-color: #ACCCE5; }
+.motion-type-1 div:nth-child(3) { background-color: #F4DFA3; }
+
+/*** motion-type-2 ***/
+.motion-type-2 div { transform-origin: right top; transform: rotate(90deg); }
+.motion-type-2 div:nth-child(1) { background-color: #B4A2C9; }
+.motion-type-2 div:nth-child(2) { background-color: #E7BABB; }
+.motion-type-2 div:nth-child(3) { background-color: #B0D9D2; }
+
+/*** motion-type-3 ***/
+.motion-type-3 div { transform: scale(0); }
+.motion-type-3 div:nth-child(2n - 1) {
+    transform-origin: bottom right; transform: translateY(-100%) rotate(30deg);
+}
+.motion-type-3 div:nth-child(2n) {
+    transform-origin: bottom left; transform: translateY(-100%) rotate(-30deg);
+}
+.motion-type-3 div:nth-child(1) { background-color: #F4DFA3; }
+.motion-type-3 div:nth-child(2) { background-color: #E7BABB; }
+.motion-type-3 div:nth-child(3) { background-color: #fffce5; }
+
+.top-picture div {
+    transform: scale(0);
+}
+
+/**
+ * #prologue
+ */
+#prologue {
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%; height: 100%;
+}
+
+
+/*** 共通: .word-1, .word-2 ***/
+#prologue .word-1,
+#prologue .word-2 {
+    position: absolute;
+    top: calc(50% - 60px);
+    height: 120px;
+}
+#prologue .word-1 div,
+#prologue .word-2 div {
+    float: left;
+    width: 120px; height: 120px;
+    border: dashed 1px #888;
+    border-right: none;
+    box-sizing: border-box;
+}
+#prologue .word-1 div p,
+#prologue .word-2 div p {
+    width: 100%; height: 100%;
+    font-size: 80px;
+    color: #777;
+    text-align: center;
+    line-height: 120px;
+    opacity: 0;
+}
+#prologue .word-1 div:last-child,
+#prologue .word-2 div:last-child { border-right: dashed 1px #888; }
+#prologue .word-1:after,
+#prologue .word-2:after {
+    content: ""; display: block; clear: both;
+}
+
+/*** .word-1 ***/
+#prologue .word-1 { left: calc(25% - 240px); }
+
+/*** .word-2 ***/
+#prologue .word-2 { right: 80px; }
+
+
+/*** .connect-line ***/
+#prologue .connect-line {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+#prologue .connect-line .point {
+    position: absolute; top: calc(50% + 90px);
+    width: 20px; height: 20px;
+    background-color: #666;
+    border-radius: 50%;
+}
+#prologue .connect-line .point-1 { left: calc(25% - 250px); }
+#prologue .connect-line .point-2 { left: calc(25% + 230px); }
+#prologue .connect-line .point-3 { right: 70px; transform: scale(0); }
+
+#prologue .line {
+    position: absolute;
+    top: calc(50% + 99px);
+    height: 1px;
+    overflow: hidden;
+}
+#prologue .line:after {
+    content: ""; display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #666;
+    transform: translateX(-100%);
+}
+#prologue .line-1 { width: 480px; left: calc(25% - 240px); }
+#prologue .line-2 {
+    width: calc(((50% - 480px) / 2) + (50% - 80px));
+    right: 80px;
+}
+
+
+/*******************************************************************************************
+ * animation
+ *******************************************************************************************/
+.motion-type-1 div:nth-child(1) { animation: scale 0.8s ease 0.5s forwards; }
+.motion-type-1 div:nth-child(2) { animation: scale 0.8s ease 0.6s forwards; }
+.motion-type-1 div:nth-child(3) { animation: scale 0.8s ease 0.7s forwards; }
+
+.motion-type-2 div:nth-child(1) { animation: rotate 0.5s ease 1.5s forwards; }
+.motion-type-2 div:nth-child(2) { animation: rotate 0.5s ease 1.7s forwards; }
+.motion-type-2 div:nth-child(3) { animation: rotate 0.5s ease 1.9s forwards; }
+
+.motion-type-3 div:nth-child(1) { animation: fall-1 0.6s ease 2.4s forwards; }
+.motion-type-3 div:nth-child(2) { animation: fall-2 0.6s ease 2.6s forwards; }
+.motion-type-3 div:nth-child(3) { animation: fall-1 0.6s ease 2.8s forwards; }
+
+.top-picture div:nth-child(1){ animation: show_image 2.0s ease 3.0s forwards; }
+.top-picture div:nth-child(2){ animation: show_image 2.0s ease 4.0s forwards; }
+
+/*** .word-1 ***/
+#prologue .word-1 div:nth-child(1) p { animation: show-word 0.6s ease-out 0.0s forwards; }
+#prologue .word-1 div:nth-child(2) p { animation: show-word 0.6s ease-out 0.2s forwards; }
+#prologue .word-1 div:nth-child(3) p { animation: show-word 0.6s ease-out 0.4s forwards; }
+#prologue .word-1 div:nth-child(4) p { animation: show-word 0.6s ease-out 0.6s forwards; }
+#prologue .word-1 div:nth-child(5) p { animation: show-word 0.6s ease-out 0.6s forwards; }
+
+/*** .line-1 ***/
+#prologue .line-1:after { animation: draw-line 1.2s ease 0s forwards; }
+
+/*** #prologue: ここで右側に移動する ***/
+#prologue { animation: move-prologue 0.8s ease 1.2s forwards; }
+
+/*** .line-2 ***/
+#prologue .line-2:after { animation: slash-line 1.6s ease 1.2s forwards; }
+
+/*** .point-3 ***/
+#prologue .point-3 { animation: put-point 1s ease-out 2s forwards; }
+
+/*** .word-2 ***/
+#prologue .word-2 div:nth-child(1) p { animation: show-word 0.6s ease-out 1.6s forwards; }
+#prologue .word-2 div:nth-child(2) p { animation: show-word 0.6s ease-out 1.8s forwards; }
+#prologue .word-2 div:nth-child(3) p { animation: show-word 0.6s ease-out 2.0s forwards; }
+
+/*** .word-2: ここで次のパートに繋ぐための回転 ***/
+#prologue .word-2 { animation: rotate-word-2 0.4s ease 2.6s forwards; }
+
+/*******************************************************************************************
+ * keyframes
+ *******************************************************************************************/
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes scale {
+    from { transform: scale(0); }
+    to   { transform: scale(1); }
+}
+@keyframes rotate {
+    from { transform: rotate(90deg); }
+    to   { transform: rotate(0deg); }
+}
+@keyframes fall-1 {
+    from { transform: translateY(-100%) rotate(30deg); }
+    to   { transform: translateY(0%) rotate(0deg); }
+}
+@keyframes fall-2 {
+    from { transform: translateY(-100%) rotate(-30deg); }
+    to   { transform: translateY(0%) rotate(0deg); }
+}
+
+@keyframes show_image {
+    0%   { opacity: 0 }
+    100% { opacity: 1 }
+    from { transform: scale(0); }
+    to   { transform: scale(1); }
+}
+
+@keyframes show-word {
+    0%   { transform: scale(0.4); opacity: 0; }
+    70%  { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@keyframes draw-line {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
+}
+@keyframes slash-line {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
+@keyframes move-prologue {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@keyframes put-point {
+    0%   { transform: scale(0); }
+    70%  { transform: scale(2); }
+    100% { transform: scale(0); }
+}
+@keyframes rotate-word-2 {
+    0%   { transform: rotate(0deg); opacity: 1; }
+    100% { transform: rotate(-90deg); opacity: 0; }
+}
+
