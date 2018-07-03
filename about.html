@@ -15,7 +15,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript"src="//webfonts.sakura.ne.jp/js/sakura.js"></script>
     </head>
-    <body style="padding-top: 50px">
+    <body style="padding-top: 40px">
     <div class="bgImage-about">
         <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
             <a href="./index.html" class="navbar-brand">ボーさんのサイト</a>
@@ -49,18 +49,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <div class="container">
-                <div class="jumbotron">
-                <div class="h1 text-center font-weight-bold">ボーさんの紹介</div>
-                <img src="./images/bosan.png" class="rounded mx-auto d-block" alt="プロフィール画像">
-                </div>
-                <p class="h4 text-center text-justify">ネットワークとかサーバとかプログラミングとか色々かじってるオタク。</p>
-                <blockquote><h3>スキルとか</h3></blockquote>
-                <ul class="list-group" style="max-width: 400px;">
-                    <li class="list-group-item">Networkコマンド(Cisco,vyos)</li>
-                    <li class="list-group-item">Linux(Ubuntu,CentOS)</li>
-                    <li class="list-group-item">C,CSS3,HTML5,Bootstrap4</li>
-                    <p />
-                </ul>
+                <div class="h1 text-center font-weight-bold" style="font-family: 解ミン 宙 B; margin-top: 120px; margin-bottom: 40px; font-size: 400%">ボーさんの紹介</div>
+                <img src="./images/bosan.png" class="rounded mx-auto d-block" id="bo-san-image" alt="プロフィール画像" style="margin-bottom: 20px; font-family: 解ミン 宙 B; font-size: 300%">
+                <p class="h4 text-center text-justify" style="font-size:200%"><br />ネットワークとかサーバとかプログラミングとか色々かじってるオタク。</p>
+                <br />
+                <table class="table table-responsive table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">現状のスキルセット</th>
+                    </tr><br />
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="skil1">Network</th>
+                        <td>Networkコマンド(Cisco,vyos)</td>
+                    </tr>
+                    <tr>
+                        <th scope="skil2">OS</th>
+                        <td>Linux(Ubuntu,CentOS)</td>
+                    </tr>
+                    <tr>
+                        <th scope="skil3">サイト作り</th>
+                        <td>C,CSS3,HTML5,Bootstrap4</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
     </div>
     </body>
