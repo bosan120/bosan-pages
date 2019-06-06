@@ -1,0 +1,13 @@
+const twilio = require('twilio');
+const accountSid = 'ACae5d480cdcd424d3caef637b515651b3'; // Your Account SID from www.twilio.com/console
+const authToken = '9d4f49f50e1baacdbe95a601a51865e8';   // Your Auth Token from www.twilio.com/console
+
+const client = new twilio(accountSid, authToken);
+
+client.calls
+      .create({
+        url: 'http://demo.twilio.com/docs/voice.xml',
+        to: '+8170-3545-5647',  // Text this number
+        from: '+12052094519' // From a valid Twilio number
+      })
+      .then(call => console.log(call.sid));
