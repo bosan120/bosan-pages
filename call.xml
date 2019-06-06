@@ -1,13 +1,4 @@
-const twilio = require('twilio');
-const accountSid = 'ACae5d480cdcd424d3caef637b515651b3'; // Your Account SID from www.twilio.com/console
-const authToken = '9d4f49f50e1baacdbe95a601a51865e8';   // Your Auth Token from www.twilio.com/console
-
-const client = new twilio(accountSid, authToken);
-
-client.calls
-      .create({
-        url: 'https://github.com/bosan120/bosan-pages/edit/master/call.xml',
-        to: '+819082146762',  // Text this number
-        from: '+12052094519' // From a valid Twilio number
-      })
-      .then(call => console.log(call.sid));
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say voice="alice">一樹さんがジュンサンに向けて仕掛けた電話です。よろしくっ！</Say>
+</Response>
